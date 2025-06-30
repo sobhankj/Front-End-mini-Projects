@@ -1,0 +1,114 @@
+@font-face {
+    font-family: Shabnam-FD;
+    src: url("../fonts/Shabnam-FD.woff2") format("woff2");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Shabnam-FD' , Arial, Helvetica, sans-serif;
+    background-color: #FAFAFA;
+}
+
+.content-wrap {
+    max-width: 1150px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.legend-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-products {
+    display: flex;
+    align-items: center;
+}
+
+.title-content {
+    font-weight: 600;
+}
+
+.show-link {
+    color: #0277BD;
+    text-decoration: none;
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product1,
+.product2,
+.product3,
+.product4 {
+    background-color: white;
+    max-width: 260px;
+    box-shadow: 0px 5px 10px #d7d7d7;
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+.product-image {
+    width: 100%;
+    margin: 0 auto 15px;
+}
+
+.text-product {
+    display: inline-block;
+    min-height: 80px;
+    color: #424242;
+    text-decoration: none;
+}
+
+.property {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 8px;
+}
+
+.incount {
+    display: inline-block;
+    font-weight: 600;
+    padding: 1px 3px;
+    border-radius: 3px;
+    background-color: #BBDEFB;
+    color: #0277BD;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.del-price {
+    text-decoration: line-through #757575;
+    color: #757575;
+}
+
+.text-price {
+    color: #757575;
+}
+
+.price {
+    margin-left: 3px;
+    font-size: 1rem;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+}
+
+.star-svg {
+    margin-right: 5px;
+}
+
+.star-count {
+    color: #757575;
+}
