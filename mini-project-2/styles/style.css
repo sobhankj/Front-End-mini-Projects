@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+body {
+    font-family: "Poppins";
+    background-color: #080710;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrap::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(#1565C0, #42A5F5);
+    filter: blur(100px);
+    z-index: -1;
+    top: -100px;
+    left: -100px;
+}
+
+.login-wrap::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(#EF6C00, #FF9800);
+    filter: blur(100px);
+    z-index: -1;
+    bottom: -100px;
+    right: -100px;
+}
+
+.content-wrap {
+    position: relative;
+    background-color: transparent;
+}
+
+.login-wrap {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.13);
+    width: 380px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #252525;
+    border: 1px solid rgba(226, 226, 226, 0.185);
+    backdrop-filter: blur(10px);
+}
+
+.head{
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.username {
+    margin-bottom: 30px;
+}
+
+.password {
+    margin-bottom: 50px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 10px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+.submit-buttom {
+    width: 100%;
+    padding: 15px 0px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
