@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(315deg, #8f3636, #d7e1ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logos-wrap {
+    display: flex;
+    gap: 20px;
+}
+
+.logo1,
+.logo2,
+.logo3,
+.logo4,
+.logo5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 100px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    transition: all 200ms;
+    transition-delay: 50ms;
+    position: relative;
+}
+
+.text-logo1,
+.text-logo2,
+.text-logo3,
+.text-logo4,
+.text-logo5 {
+    display: none;
+    position: absolute;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.arr {
+    position: absolute;
+    display: none;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+}
+
+.text-logo1,
+.arr-logo1 {
+    background-color: #283593;
+}
+
+.text-logo2,
+.arr-logo2 {
+    background-color: #00838F;
+}
+
+.text-logo3,
+.arr-logo3 {
+    background-color: #880E4F;
+}
+
+.text-logo4,
+.arr-logo4 {
+    background-color: #795548;
+}
+
+.text-logo5,
+.arr-logo5 {
+    background-color: #E57373;
+}
+
+
+
+.facebook-blue,
+.twitter-blue,
+.instagram-colorful,
+.github-reverse,
+.youtube-red {
+    display: none;
+}
+
+.logo1:hover {
+    background-color: #283593;
+    .facebook-blue {
+        display: block;
+    }
+    .facebook {
+        display: none;
+    }
+    .text-logo1 {
+        display: block;
+        top: -50px;
+    }
+    .arr-logo1 {
+        display: block;
+        top: -30px;
+        z-index: -1;
+    }
+}
+
+.logo2:hover {
+    background-color: #00838F;
+    .twitter-blue {
+        display: block;
+    }
+    .twitter {
+        display: none;
+    }
+    .text-logo2 {
+        display: block;
+        top: -50px;
+    }
+    .arr-logo2 {
+        display: block;
+        top: -30px;
+        z-index: -1;
+    }
+}
+
+.logo3:hover {
+    background-color: #880E4F;
+    .instagram-colorful {
+        display: block;
+    }
+    .instagram {
+        display: none;
+    }
+    .text-logo3 {
+        display: block;
+        top: -50px;
+    }
+    .arr-logo3 {
+        display: block;
+        top: -30px;
+        z-index: -1;
+    }
+}
+
+.logo4:hover {
+    background-color: #795548;
+    .github-reverse {
+        display: block;
+    }
+    .github {
+        display: none;
+    }
+    .text-logo4 {
+        display: block;
+        top: -50px;
+    }
+    .arr-logo4 {
+        display: block;
+        top: -30px;
+        z-index: -1;
+    }
+}
+
+.logo5:hover {
+    background-color: #E57373;
+    .youtube-red {
+        display: block;
+    }
+    .youtube {
+        display: none;
+    }
+    .text-logo5 {
+        display: block;
+        top: -50px;
+    }
+    .arr-logo5 {
+        display: block;
+        top: -30px;
+        z-index: -1;
+    }
+}
+
