@@ -1,0 +1,793 @@
+/* App Fonts */
+
+@font-face {
+    font-family: "TTNorms";
+    src: url("../fonts/TTNorms-Regular.otf") format("openType");
+}
+@font-face {
+    font-family: "TTNorms Medium";
+    src: url("../fonts/TTNorms-Medium.otf") format("openType");
+}
+@font-face {
+    font-family: "TTNorms Light";
+    src: url("../fonts/TTNorms-Light.otf") format("openType");
+}
+
+@font-face {
+    font-family: "Times Roman Italic";
+    src: url("../fonts/Times-new-roman-italic.ttf") format("truetype");
+}
+
+/* Normalize Css */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+a {
+    background-color: transparent;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+img {
+    border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0; /* 3 */
+    white-space: normal;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+details {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+template {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+
+
+
+
+/* Start Project */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "TTNorms";
+}
+
+.container{
+    max-width: 80rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.navbar {
+    height: 5rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-company {
+    margin-right: 3rem;
+    padding: 2rem 0rem;
+}
+
+.link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    padding: 2rem 1rem;
+    color: #455A64;
+    text-decoration: none;
+}
+
+.link-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 5px;
+}
+
+.contact {
+    background-color: #1565C0;
+    color: white;
+}
+
+.contact-green {
+    background-color: #4bc12a;
+    color: white;
+    margin-right: 1rem;
+}
+
+.see-our {
+    background-color: #1565C0;
+    color: white;
+}
+
+.hero {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-heading {
+    word-spacing: 5px;
+    font-size: 2.5rem;
+}
+
+.hero-text {
+    color: #455A64;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.8rem;
+}
+
+.hero-content-wrap {
+    width: 38%;
+}
+
+.hero-image {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+.how-it-work {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.how-text {
+    text-transform: uppercase;
+    color: #455A64;
+}
+
+.how-title {
+    margin-top: 0.6rem;
+    text-transform: capitalize;
+}
+
+.title-wrapper {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.properties-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.property {
+    text-align: center;
+    padding: 0rem 3rem;
+}
+
+.prop-text {
+    color: #455A64;
+    line-height: 1.8rem;
+}
+
+.Companies-section {
+    background-color: #115bb0;
+    width: 100%;
+    margin-bottom: 10rem;
+}
+
+.companies-wrapper {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comp-title-wrapper {
+    color: white;
+    text-align: center;
+    max-width: 30rem;
+    margin-bottom: 4.5rem;
+}
+
+.comp-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.comp-text {
+    line-height: 1.8rem;
+}
+
+.notes-people {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 10rem;
+}
+
+.note {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0rem 1rem;
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.note-text {
+    color: #455A64;
+    font-style: italic;
+}
+
+.note-writer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid #8098a3b9;
+}
+
+.companies-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0rem 5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-section {
+    margin-bottom: 10rem;
+}
+
+.portfo-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.portfo-title-wrapper {
+    margin-bottom: 4rem;
+}
+
+.portfo-content {
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+}
+
+.portfo-image {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.email-section {
+    width: 100%;
+    background-color: #115bb0;
+}
+
+.email-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding: 8rem 1rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-email-wrapper {
+    color: white;
+    font-size: large;
+    font-weight: normal;
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 0rem 0.5rem;
+    border-radius: 3px;
+}
+
+.form-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email-input {
+    padding: 1rem 0rem;
+    margin: 0px;
+    border: none;
+    width: 15rem;
+    outline: none;
+}
+
+.submit-button {
+    border-radius: 3px;
+    background-color: #115bb0;
+    border: none;
+    padding: 0.7rem 0.8rem;
+    outline: none;
+}
+
+.aloo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footer-container {
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-footer {
+    color: #455A64;
+}
+
+
+/* Project Responsive */
+
+@media only screen and (max-width: 1200px) {
+    .hero-image {
+        width: 18rem;
+        height: 18rem;
+        display: flex;
+        justify-content: end;
+    }
+
+    .hero-heading {
+        word-spacing: 5px;
+        font-size: 2rem;
+        max-width: 20rem;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+    }
+
+    .link-button {
+        padding: 0.6rem 1.6rem;
+    }
+
+    .notes-people {
+        gap: 1.5rem;
+        margin-bottom: 5rem;
+    }
+
+    .Companies-section {
+        margin-bottom: 8rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .navbar {
+        margin-bottom: 3rem;
+    }
+
+    .logo-company {
+        margin-right: 0.5rem;
+        padding: 1rem 0rem;
+    }
+
+    .nav-link {
+        padding: 1rem 0.5rem;
+    }
+
+    .contact {
+        padding: 0.6rem 1.4rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .hero-content-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-heading {
+        max-width: 30rem;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+        max-width: 40rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image {
+        width: auto;
+        height: auto;
+    }
+
+    .how-it-work {
+        margin-top: 7rem;
+    }
+
+    .property {
+        padding: 0rem 1.5rem;
+    }
+
+    .Companies-section {
+        margin-bottom: 5rem;
+    }
+
+    .companies-logos {
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .portfolio-section {
+        margin-bottom: 8rem;
+    }
+
+    .portfo-content {
+        flex-wrap: wrap;
+    }
+
+    .portfo-image {
+        min-width: 18rem;
+    }
+
+    .email-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 4rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .how-button {
+        display: none;
+    }
+
+    .client-button {
+        display: none;
+    }
+
+    .portfo-button {
+        display: none;
+    }
+
+    .client {
+        padding: 0.4rem 1.2rem;
+    }
+
+    .properties-wrapper {
+        margin-bottom: 3rem;
+    }
+
+    .prop-title {
+        font-size: 1.1rem;
+    }
+
+    .prop-text {
+        font-size: 0.9rem;
+    }
+
+    .how-it-work {
+        margin-bottom: 6rem;
+    }
+
+    .comp-title-wrapper {
+        margin-bottom: 2rem;
+    }
+    .notes-people {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .companies-logos {
+        justify-content: space-around;
+    }
+
+    .navbar {
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .contact {
+        display: none;
+    }
+    .navbar {
+        margin-bottom: 0rem;
+    }
+
+    .hero {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    
+    .hero-heading {
+        font-size: 1.5rem;
+    }
+
+    .hero-text {
+        font-size: 0.8rem;
+    }
+
+    .buttons-hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .link-button {
+        margin: 0;
+    }
+
+    .title-wrapper {
+        margin-bottom: 0.5rem;
+    }
+
+    .properties-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .prop-text {
+        line-height: normal;
+    }
+
+    .image-how {
+        width: 300px;
+    }
+
+    .comp-title {
+        font-size: 1.5rem;
+    }
+
+    .comp-text {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+    }
+
+    .note-text {
+        font-size: 1rem;
+    }
+
+    .writer-name {
+        font-size: 0.9rem;
+    }
+    
+    .companies-logos {
+        gap: 15px;
+    }
+
+    .text-footer {
+        font-size: 0.8rem;
+    }
+}
