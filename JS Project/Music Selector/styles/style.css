@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background-image: url("../images/1.jpg");
+}
+
+.content_wrapper {
+    width: 30rem;
+    height: 15rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.musics_container {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.genre_select {
+    width: 10rem;
+    height: 2rem;
+}
+
+.music_select {
+    width: 10rem;
+    height: 2rem;
+}
