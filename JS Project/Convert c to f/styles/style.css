@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #d6d6d6;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.content_wrapper {
+    background-color: white;
+    width: 30rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.celsius_content {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+#celsius {
+    padding-left: 1rem;
+    margin-top: 5px;
+    width: 100%;
+    height: 2rem;
+}
+
+.fahrenheit_content {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+#fahrenheit {
+    padding-left: 1rem;
+    margin-top: 5px;
+    width: 100%;
+    height: 2rem;
+}
+
+.button_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button {
+    width: 10rem;
+    height: 3rem;
+    border: none;
+}
+
+.submit_button {
+    background-color: green;
+    color: white;
+}
+
+.clear_button {
+    background-color: red;
+    color: white;
+}
