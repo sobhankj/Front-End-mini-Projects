@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/mystical-foggy-7680x4320-12991.jpg");
+    background-size: cover;
+}
+
+.up-wrapper {
+    width: 30rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(59, 59, 59, 0.457);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+}
+#weather_input {
+    width: 20rem;
+    height: 2rem;
+    padding-left: 1rem;
+}
+.button {
+    height: 2rem;
+}
+
+.weather_container {
+    color: white;
+    width: 50rem;
+    padding: 1rem;
+    background-color: rgba(59, 59, 59, 0.457);
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+.humidity {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.temperator {
+    font-size: 2rem;
+}
+
+.temp {
+    margin-left: 2rem;
+    font-size: 3rem;
+}
+
+.image {
+    width: 250px;
+}
