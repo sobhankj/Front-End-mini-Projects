@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.initialize-section {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 173, 173);
+    opacity: 0;
+}
+
+.text-init-container {
+    background-color: rgb(0, 98, 98);
+    width: 20rem;
+    height: 5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.text-init-container p {
+    color: white;
+    font-size: 2rem;
+}
+
+.hidden-box .initialize-section{
+    opacity: 1;
+}
+
+.centent-section {
+    background-color: rgb(207, 255, 255);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.code-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.bold {
+    font-size: 7rem;
+    font-weight: 600;
+}
+
+.key-infos {
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.info-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.info {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    width: 20rem;
+    height: 10rem;  
+    text-align: center;  
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    background-color: rgb(43, 43, 177);
+    color: white;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    font-size: 1.5rem;
+}
