@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.terms_button {
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    background-color: #212121;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.show .modal_container {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal_content {
+    text-align: justify;
+    color: white;
+    padding: 1rem;
+    width: 20rem;
+    background-color: #212121;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.button {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.accept_button { 
+    background-color: rgb(0, 105, 0);
+    color: white;
+}
+
+.reject_button {
+    background-color: rgb(135, 0, 0);
+    color: white;
+}
