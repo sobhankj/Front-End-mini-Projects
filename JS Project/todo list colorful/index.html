@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobhankj - To Do List</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="hidden">
+    <section class="add_page">
+        <div class="add_page_container">
+            <button class="close_button_task">X</button>
+            <p class="add_page_title">Add New Task</p>
+            <div class="input_wrapper">
+                <input type="text" placeholder="Enter Task" class="add_task_input">
+                <p class="alert">Please first fill the input</p>
+                <div class="color_wrapper">
+                    <div class="color_item selected_color" data-color="#ffffff"></div>
+                    <div class="color_item" data-color="#4527A0"></div>
+                    <div class="color_item" data-color="#1565C0"></div>
+                    <div class="color_item" data-color="#00838F"></div>
+                    <div class="color_item" data-color="#F9A825"></div>
+                    <div class="color_item" data-color="#C62828"></div>
+                </div>
+                <div class="button_wrapper_task">
+                    <button class="button add_button_task">Add</button>
+                    <button class="button cancel_button_task">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <h1 class="hedder">Sobhankj - To Do List</h1>
+        <div class="button_wrapper">
+            <button class="button add_button">Add New Task</button>
+            <button class="button all_delete_button">Delete All Tasks</button>
+        </div>
+        <div class="task_wrapper">
+        </div>
+    </section>
+    <script src="./js/app.js"></script>
+</body>
+</html>
