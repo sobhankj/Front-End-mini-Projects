@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background-color: #1e1e1e;
+}
+
+.hidden {
+    display: none;
+}
+
+.music_player_container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    color: white;
+}
+
+.buttons_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
