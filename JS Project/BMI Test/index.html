@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Test</title>
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+<body>
+    <div class="modal_container">
+        <div class="head_modal">
+            <p>Result of your BMI</p>
+            <button class="close_modal">X</button>
+        </div>
+        <div class="content_modal">
+            <p>BMI</p>
+            <p class="result_BMI">30.4</p>
+        </div>
+        <div class="text_modal">
+            <p class="status_info">Your status is:<span class="status_info_text" id="total_status">Overweight</span></p>
+        </div>
+        <div class="buttons_modal">
+            <button class="button share_button">Share</button>
+            <button class="button close_button">Close</button>
+        </div>
+    </div>
+
+    <div class="BMI_container">
+        <h1>BMI Test for healthy life</h1>
+        <div class="BMI_content">
+            <div class="input_container">
+                <div class="input_wrapper">
+                    <label for="height">Height (cm)</label>
+                    <input type="text" id="height" placeholder="Enter your height" class="input_field">
+                </div>
+                <div class="input_wrapper">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="text" id="weight" placeholder="Enter your weight" class="input_field">
+                </div>
+            </div>
+            <button class="calculate_button">Calculate</button>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>

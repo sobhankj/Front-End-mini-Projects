@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #0e0e0e;
+}
+
+.BMI_container {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.BMI_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 30rem;
+    background-color: #141414;
+    padding: 1rem;
+}
+
+.input_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.input_field {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.calculate_button {
+    width: 90%;
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #003826;
+    color: white;
+    cursor: pointer;
+}
+
+.modal_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 35rem;
+    border-radius: 10px;
+    color: white;
+    display: none;
+    padding: 1rem;
+}
+
+.show_modal .modal_container {
+    display: flex;
+}
+
+.head_modal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.close_modal {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: #380000;
+    color: white;
+    cursor: pointer;
+}
+
+.content_modal {
+    width: 15rem;
+    height: 15rem;
+    background-color: #141414;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 50%;
+    padding: 1rem;
+    font-size: 2.5rem;
+}
+
+.text_modal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.status_info_text {
+    margin-left: 1rem;
+}
+
+.buttons_modal {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.button {
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+.share_button {
+    background-color: #003826;
+}
+
+.close_button {
+    background-color: #380000;
+}
