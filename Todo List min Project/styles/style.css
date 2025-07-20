@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(7, 22, 36);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container {
+    margin-top: 2rem;
+    max-width: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hedder_wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hedder {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    width: 7rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.add_button {
+    width: 9rem;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.all_delete_button {
+    width: 9rem;
+    background-color: #f44336;
+    color: white;
+}
+
+.single_delete_button {
+    background-color: #f44336;
+    color: white;
+}
+
+.task_wrapper {
+    padding: 30px;
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    background-color: #1b182c;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+}
+
+.task_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tasks_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.initial_task_title {
+    color: #fff;
+    width: 90%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.task {
+    width: 90%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 30px;
+    background-color: #242037;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+#new_tasks {
+    background-color: #455A64;
+}
+
+#in_progress {
+    background-color: #FF8F00;
+}
+
+#completed {
+    background-color: #2E7D32;
+}
+
+#deleted {
+    background-color: #C62828;
+}
+
+.add_page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.add_page_container {
+    width: 35rem;
+    background-color: #1b182c;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 10px;
+}
+
+.close_button_task {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add_page_title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.input_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2rem;
+}
+
+.add_task_input {
+    width: 100%;
+    height: 3rem;
+    padding-left: 1rem;
+    outline: none;
+    border: 2px solid #ffffff;
+    border-color: #ffffff;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.alert {
+    width: 100%;
+    color: #f44336;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: -1rem;
+    text-align: start;
+    display: none;
+}
+
+.alert_show {
+    display: block;
+}
+
+.button_wrapper_task {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.add_button_task {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancel_button_task {
+    background-color: #f44336;
+    color: white;
+}
+
+.hidden .add_page {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.color_wrapper {
+    width: 100%;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.color_item {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.selected_color {
+    border: 2px solid #ffffff99;
+}
