@@ -261,3 +261,10 @@ body {
 .selected_color {
     border: 2px solid #ffffff99;
 }
+
+.theme_button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
