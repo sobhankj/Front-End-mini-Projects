@@ -108,7 +108,7 @@ all_delete_button.addEventListener("click", () => {
 const theme_button = document.querySelector(".theme_button");
 const task_wrapper = document.querySelector(".task_wrapper");
 const hedder_title = document.querySelector(".hedder");
-const theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "light";
+const theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";
     if (theme === "light") {
         theme_button.firstChild.src = "./images/night-moon-svgrepo-com.svg";
         document.body.style.backgroundColor = "rgb(214, 214, 214)";
