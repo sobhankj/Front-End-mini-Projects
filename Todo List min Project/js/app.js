@@ -69,7 +69,7 @@ const color_items = document.querySelectorAll(".color_item");
 const add_task_input = document.querySelector(".add_task_input");
 const selected_color = document.querySelector(".selected_color");
 add_task_input.style.borderColor = selected_color.dataset.color;
-var task_id_new = "0";
+var task_id_new = localStorage.getItem("task_id") ? localStorage.getItem("task_id") : "0";
 
 color_items.forEach(color_item => {
     color_item.style.backgroundColor = color_item.dataset.color;
@@ -199,6 +199,7 @@ add_button_task.addEventListener("click", () => {
         task.id = task_id_new;
         new_item.id = task_id_new;
         task_id_new = ((+task_id_new) + 1).toString();
+        localStorage.setItem("task_id" , task_id_new);
         task.style.backgroundColor = todo_input.style.borderColor;
         task.innerHTML = `<div class="task_content">${todo_title}</div>`;
         task.addEventListener("dragstart", dragStartHandler)
