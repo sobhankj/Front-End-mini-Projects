@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobhankj - To Do List</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/app.js" defer></script>
 </head>
 <body class="hidden">
     <section class="add_page">
@@ -61,7 +62,15 @@
             </div>
         </div>
     </section>
-    <button class="theme_button"><img src="./images/day-forecast-hot-svgrepo-com.svg" alt="" width="40px"></button>
-    <script src="./js/app.js"></script>
+    <div class="theme_button_container">
+        <button class="theme_button"><img src="./images/day-forecast-hot-svgrepo-com.svg" alt="" width="40px"></button>
+        <div class="another_theme_button_container">
+            <div class="buttons_theme" data-pcolor="#B71C1C" data-scolor="#E57373" data-theme="red"></div>
+            <div class="buttons_theme" data-pcolor="#4A148C" data-scolor="#BA68C8" data-theme="purple"></div>
+            <div class="buttons_theme" data-pcolor="#1A237E" data-scolor="#7986CB" data-theme="blue"></div>
+            <div class="buttons_theme" data-pcolor="#1B5E20" data-scolor="#81C784" data-theme="green"></div>
+            <div class="buttons_theme" data-pcolor="#F57F17" data-scolor="#FFF176" data-theme="yellow"></div>
+        </div>
+    </div>
 </body>
 </html>

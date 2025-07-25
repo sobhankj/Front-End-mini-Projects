@@ -1,3 +1,6 @@
+// get root element
+const root = document.querySelector(":root");
+
 let todos_container = [
     [],
     [],
@@ -231,13 +234,29 @@ const hedder_title = document.querySelector(".hedder");
 const theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";
     if (theme === "light") {
         theme_button.firstChild.src = "./images/night-moon-svgrepo-com.svg";
-        document.body.style.backgroundColor = "rgb(214, 214, 214)";
-        task_wrapper.style.backgroundColor = "#989898";
+        root.style.setProperty("--primary_color", "rgb(214, 214, 214)");
+        root.style.setProperty("--secondary_color", "#989898");
         hedder_title.style.color = "#000";
-    } else {
+    } else if (theme === "red") {
+        root.style.setProperty("--primary_color", "#B71C1C");
+        root.style.setProperty("--secondary_color", "#E57373");
+    } else if (theme === "purple") {
+        root.style.setProperty("--primary_color", "#4A148C");
+        root.style.setProperty("--secondary_color", "#BA68C8");
+    } else if (theme === "blue") {
+        root.style.setProperty("--primary_color", "#1A237E");
+        root.style.setProperty("--secondary_color", "#7986CB");
+    } else if (theme === "green") {
+        root.style.setProperty("--primary_color", "#1B5E20");
+        root.style.setProperty("--secondary_color", "#81C784");
+    } else if (theme === "yellow") {
+        root.style.setProperty("--primary_color", "#F57F17");
+        root.style.setProperty("--secondary_color", "#FFF176");
+    }
+    else {
         theme_button.firstChild.src = "./images/day-forecast-hot-svgrepo-com.svg";
-        document.body.style.backgroundColor = "rgb(7, 22, 36)";
-        task_wrapper.style.backgroundColor = "#1b182c";
+        root.style.setProperty("--primary_color", "rgb(7, 22, 36)");
+        root.style.setProperty("--secondary_color", "#1b182c");
         hedder_title.style.color = "#fff";
     }
 
@@ -246,16 +265,27 @@ theme_button.addEventListener("click", () => {
     if (theme === "light") {
         localStorage.setItem("theme", "dark");
         theme_button.firstChild.src = "./images/day-forecast-hot-svgrepo-com.svg";
-        document.body.style.backgroundColor = "rgb(7, 22, 36)";
-        task_wrapper.style.backgroundColor = "#1b182c";
+        root.style.setProperty("--primary_color", "rgb(7, 22, 36)");
+        root.style.setProperty("--secondary_color", "#1b182c");
         hedder_title.style.color = "#fff";
     } else {
         localStorage.setItem("theme", "light");
         theme_button.firstChild.src = "./images/night-moon-svgrepo-com.svg";
-        document.body.style.backgroundColor = "rgb(214, 214, 214)";
-        task_wrapper.style.backgroundColor = "#989898";
+        root.style.setProperty("--primary_color", "rgb(214, 214, 214)");
+        root.style.setProperty("--secondary_color", "#989898");
         hedder_title.style.color = "#000";
     }
 })
 
 
+const theme_buttons = document.querySelectorAll(".buttons_theme");
+
+
+theme_buttons.forEach(theme_button => { 
+    theme_button.style.backgroundColor = theme_button.dataset.pcolor;
+    theme_button.addEventListener("click", () => {
+        localStorage.setItem("theme" , theme_button.dataset.theme);
+        root.style.setProperty("--primary_color", theme_button.dataset.pcolor);
+        root.style.setProperty("--secondary_color", theme_button.dataset.scolor);
+    })
+})
