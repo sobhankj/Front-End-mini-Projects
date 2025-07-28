@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+    <link rel="stylesheet" href="./styles/app.css">
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+    <div class="resualt_report hidden">
+        <div class="resualt_report_content">
+            <h1 class="resualt_report_title">Resualt Report</h1>
+            <div class="resualt_report_score">
+                <div class="AnsResInfo">
+                    <p class="res_score">Your Score: <span class="res_score_value">10/10</span></p>
+                    <p class="res_time">Your Remaining Time: <span class="res_time_value">10 minutes</span></p>
+                    <p class="res_percentage">Your Percentage: <span class="res_percentage_value">100%</span></p>
+                </div>
+                <div class="AnsResCircul">
+                    <p>A</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container_quiz">
+        <h1 class="Question">Quesion1</h1>
+        <div class="content_wrapper">
+            <div class="content_info">
+                <div class="index_question"></div>
+                <div class="time_question"></div>
+            </div>
+            <div class="questions_wroapper">
+                <div class="option">
+                    <input type="radio" name="answer" id="option1" class="option_input">
+                    <label class="option_text" for="option1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, nemo?</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="answer" id="option2" class="option_input">
+                    <label class="option_text" for="option2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorem!</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="answer" id="option3" class="option_input">
+                    <label class="option_text" for="option3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="answer" id="option4" class="option_input">
+                    <label class="option_text" for="option4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</label>
+                </div>
+            </div>
+            <div class="button_wrapper">
+                <button class="btn btn_prev">Prev</button>
+                <button class="btn btn_submit">Submit</button>
+                <button class="btn btn_next">Next</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
