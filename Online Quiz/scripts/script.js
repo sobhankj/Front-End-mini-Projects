@@ -33,8 +33,8 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
-let minutes = 1;
-let seconds = 0;
+let minutes = 0;
+let seconds = 2;
 let timer;
 
 const index_questionElem = document.querySelector(".index_question");
@@ -84,6 +84,7 @@ timer = setInterval(() => {
     if (minutes === 0 && seconds === 0) {
         clearInterval(timer);
         resualt_reportElem.classList.remove("hidden");
+        calculateResualt();
     }
 }, 1000);
 
