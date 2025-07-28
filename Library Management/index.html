@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobhankj - Library Management</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="hidden">
+    <section class="add_page">
+        <div class="add_page_container">
+            <button class="close_button_book">X</button>
+            <p class="add_page_title">Add New Book</p>
+            <div class="input_wrapper">
+                <label for="book_title" class="input_label">Book Title</label>
+                <input type="text" placeholder="Enter Book Title" class="input_book add_book_input" id="book_title" required>
+                <label for="author" class="input_label">Author</label>
+                <input type="text" placeholder="Enter Author" class="input_book add_author_input" id="author" required>
+                <label for="date" class="input_label">Date</label>
+                <input type="date" placeholder="Enter Date" class="input_book add_date_input" id="date" required>
+                <p class="alert">Please first fill the input</p>
+                <div class="color_wrapper">
+                    <div class="color_item selected_color" data-color="#ffffff"></div>
+                    <div class="color_item" data-color="#4527A0"></div>
+                    <div class="color_item" data-color="#1565C0"></div>
+                    <div class="color_item" data-color="#00838F"></div>
+                    <div class="color_item" data-color="#F9A825"></div>
+                    <div class="color_item" data-color="#C62828"></div>
+                </div>
+                <div class="button_wrapper_book">
+                    <button class="button add_button_book">Add</button>
+                    <button class="button cancel_button_book">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <h1 class="hedder">Sobhankj - Library Management</h1>
+        <div class="button_wrapper">
+            <button class="button add_button">Add New Book</button>
+            <button class="button all_delete_button">Delete All Books</button>
+        </div>
+        <div class="book_wrapper">
+        </div>
+    </section>
+    <script src="./js/app.js"></script>
+</body>
+</html>
