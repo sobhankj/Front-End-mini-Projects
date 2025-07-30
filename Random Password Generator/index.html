@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="./styles/app.css">
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Password Generator Sobhankj</h1>
+        <div class="password_wrapper">
+            <p>Your Password : <span id="password"></span></p>
+        </div>
+        <div class="properties_wrapper">
+            <div class="length_wrapper">
+                <label for="length">Length</label>
+                <input type="range" id="length" min="4" max="16" value="7" step="1">
+                <p id="length_value">length: 7</p>
+            </div>
+            <div class="inputs_wrapper">
+                <div class="uppercase_wrapper">
+                    <input type="checkbox" id="uppercase">
+                    <label for="uppercase">Uppercase</label>
+                </div>
+                <div class="lowercase_wrapper">
+                    <input type="checkbox" id="lowercase">
+                    <label for="lowercase">Lowercase</label>
+                </div>
+                <div class="numbers_wrapper">
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers">Numbers</label>
+                </div>
+                <div class="symbols_wrapper">
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols">Symbols</label>
+                </div>
+            </div>
+            <div class="show_powerful_pass">
+                <p>Power of Password</p>
+                <div class="power_wrapper">
+                    <div class="power_item weak"></div>
+                    <div class="power_item"></div>
+                    <div class="power_item"></div>
+                    <div class="power_item"></div>
+                </div>
+            </div>
+        </div>
+        <button id="generate_password">Generate Password</button>
+    </div>
+</body>
+</html>
