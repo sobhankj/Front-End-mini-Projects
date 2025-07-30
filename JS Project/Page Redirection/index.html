@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project 2</title>
+    <link rel="icon" href="./images/skj1.jpeg" type="jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="s_loggin hidden">
+        <div class="s_loggin_content">
+            <img src="./images/correct-success-tick-svgrepo-com.svg" alt="" class="s_loggin_content_image" width="50px">
+            <p class="s_loggin_content_text">You have successfully logged in.</p>
+            <button class="close_s_loggin">OK</button>
+        </div>
+    </div>
+    <div class="content-wrap">
+        <div class="login-wrap">
+            <h2 class="head">Login Here</h2>
+            <form action="#" class="login-form">
+                <label for="username-input" class="text">Username</label>
+                <input type="text" name="username" id="username-input" placeholder="Email or Phone" class="input username" value=""> 
+                <p class="invalid_username hidden">The username must has more than 3 character</p>
+                <label for="password-input" class="text">Password</label>
+                <input type="password" name="password" id="password-input" placeholder="Password" class="input password" value="">
+                <p class="invalid_password hidden">The password must has more than 6 character</p>
+                <input type="submit" value="Log In" class="submit-buttom">
+            </form>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
