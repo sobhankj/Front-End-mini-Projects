@@ -33,8 +33,8 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
-let minutes = 0;
-let seconds = 2;
+let minutes = 3;
+let seconds = 0;
 let timer;
 
 const index_questionElem = document.querySelector(".index_question");
