@@ -16,7 +16,8 @@ body {
 }
 
 .container {
-    width: 50rem;
+    width: 60rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -54,4 +55,27 @@ body {
     background-color: #00185f;
     color: #ffffff;
     cursor: pointer;
+}
+
+.resultContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.image {
+    cursor: pointer;
+}
+
+.detail {
+    padding: 1rem;
+    align-self: flex-start;
+    display: flex;
+    gap: 1rem;
+}
+
+.meaning {
+    padding: 1rem;
+    width: 100%;
 }
