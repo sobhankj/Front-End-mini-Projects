@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Scissors Paper</title>
+    <link rel="stylesheet" href="./styles/app.css">
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+    <div class="modal-settings">
+        <div class="modal-settings-container">
+            <div class="modal-settings-header">
+                <button class="close-button">X</button>
+                <p>Settings</p>
+            </div>
+            <div class="modal-settings-content">
+                <label for="audio-range">Audio</label>
+                <div class="audio-range-container">
+                    <p>0</p>
+                    <input type="range" id="audio-range" min="0" max="1" step="0.1">
+                    <p>1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio src="./audios/1.mp3" id="audio"></audio>
+    <header class="header-section">
+        <div class="header-container">
+            <button class="settings-button">
+                <img src="./images/setting.svg" alt="settings" width="40px">
+            </button>
+            <h1 class="title">Rock Scissors Paper</h1>
+            <button class="backMenu-button">
+                <img src="./images/back-square-svgrepo-com.svg" alt="backMenu" width="40px">
+            </button>
+        </div>
+    </header>
+
+    <div class="options-section active">
+        <button class="option-button game1">
+            <img src="./images/boy-with-rised-arms-svgrepo-com.svg" alt="" width="80px">
+            <p>vs</p>
+            <img src="./images/robot-golem-svgrepo-com.svg" alt="" width="80px">
+        </button>
+        <button class="option-button game2">
+            <img src="./images/boy-with-rised-arms-svgrepo-com.svg" alt="" width="80px">
+            <p>vs</p>
+            <img src="./images/boy-with-rised-arms-svgrepo-com.svg" alt="" width="80px">
+        </button>
+        <button class="option-button custom-button">
+            <p>CUSTOM</p>
+        </button>
+    </div>
+
+    <div class="game-section-1v1">
+        <div class="options-fight player1">
+            <div class="rock-option" class="rock-player1">
+                <img src="./images/rock-svgrepo-com.svg" alt="rock" class="element">
+            </div>
+            <div class="scissors-option" class="scissors-player1">
+                <img src="./images/scissors-svgrepo-com.svg" alt="scissors" class="element">
+            </div>
+            <div class="paper-option" class="paper-player1">
+                <img src="./images/paper-document-file-data-svgrepo-com.svg" alt="paper" class="element">
+            </div>
+        </div>
+        <div class="final-opstion-fight">
+            <div class="special-hero-wrapper">
+                <div class="special-hero hero1-player1"></div>
+                <div class="special-hero hero2-player1"></div>
+            </div>
+            <div class="final-oprion">
+                <img src="./images/paper-document-file-data-svgrepo-com.svg" alt="" class="finalElement player1-final">
+            </div>
+        </div>
+        <div class="status-info-game">
+            <div class="scores-info">player1: <span class="player1-score">0</span><span class="player2-score">0</span> :player2</div>
+            <div class="who-win">Get Ready ...</div>
+        </div>
+        <div class="final-opstion-fight">
+            <div class="special-hero-wrapper">
+                <div class="special-hero hero1-player2"></div>
+                <div class="special-hero hero2-player2"></div>
+            </div>
+            <div class="final-oprion">
+                <img src="./images/paper-document-file-data-svgrepo-com.svg" alt="" class="finalElement player2-final">
+            </div>
+        </div>
+        <div class="options-fight player2">
+            <div class="rock-option" class="rock-player2">
+                <img src="./images/rock-svgrepo-com.svg" alt="rock" class="element">
+            </div>
+            <div class="scissors-option" class="scissors-player2">
+                <img src="./images/scissors-svgrepo-com.svg" alt="scissors" class="element">
+            </div>
+            <div class="paper-option" class="paper-player2">
+                <img src="./images/paper-document-file-data-svgrepo-com.svg" alt="paper" class="element">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

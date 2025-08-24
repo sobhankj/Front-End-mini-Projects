@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000631;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-section {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #8e002fa7;
+    height: 80px;
+    border-radius: 0 0 20px 20px;
+}
+
+.header-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    justify-content: space-between;
+}
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.settings-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.backMenu-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;    
+} 
+
+.options-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.option-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #8e002fa7;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    height: 100px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.custom-button {
+    text-align: center;
+    justify-content: center;
+}
+
+.modal-settings {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+.modal-settings-container {
+    width: 500px;
+    background-color: #8e002f;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.modal-settings-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.audio-range-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#audio-range {
+    width: 300px;
+}
+
+.game-section-1v1 {
+    width: 100%;
+    max-width: 90vw;
+    height: 40rem;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options-fight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.final-opstion-fight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.special-hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.special-hero {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+}
+
+.status-info-game {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    justify-content: start;
+}
+
+.player1-score {
+    margin-right: 3rem;
+}
+
+.scores-info {
+    font-size: 1.5rem;
+}
+
+.who-win {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+}
+
+.element {
+    width: 60px;
+}
+
+.finalElement {
+    width: 250px;
+    opacity: 0;
+}
+
+
+.active {
+    display: flex;
+}

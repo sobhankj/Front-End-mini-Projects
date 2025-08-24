@@ -46,7 +46,8 @@ username_input.addEventListener("keyup" , function() {
     }
 });
 
-password_input.addEventListener("keyup" , function() {
+password_input.addEventListener("keyup" , function(event) {
+    console.log(event.key);
     let pas_val = password_input.value;
     if (pas_val.length <= 6) {
         pass_invalid_text.classList.remove("hidden");
