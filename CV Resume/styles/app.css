@@ -87,7 +87,7 @@ main {
     position: relative;
     padding:0 50px 0 20px;
     max-width: 1400px;
-    height: 78vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,31 +119,14 @@ main {
 
 .hero-section {
     max-width: 84%;
-    position: relative;
     height: 420px;
 }
 
-.first-hero , .second-hero , .third-hero {
+.first-hero {
     background-color: #8fd9bd;
     border: 2px solid black;
 }
 
-.first-hero {
-    position: relative;
-    z-index: 5;
-}
-.second-hero {
-    top: -430px;
-    left: -20px;
-    position: relative;
-    z-index: 4;
-}
-.third-hero {
-    position: relative;
-    top: -860px;
-    left: -40px;
-    z-index: 3;
-}
 
 .hedder-hero {
     width: 100%;
@@ -172,7 +155,26 @@ main {
 }
 
 .hero-h1 {
+    display: inline;
     font-size: 3rem;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #ff9982; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */ /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ff9982; }
 }
 
 .image-me {
