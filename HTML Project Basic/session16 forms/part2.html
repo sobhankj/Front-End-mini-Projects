@@ -7,40 +7,62 @@
 </head>
 <body>
     <form action="" method="get" autocomplete="on" target="_blank">
-        <h2>User Registration</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="fname">
+        <fieldset>
+            <legend>User Registration</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="fname">
+        </fieldset>
         <br>
-        <h3>Ratio Button</h3>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
+        <fieldset>
+            <legend>Radio Button</legend>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </fieldset>
         <br>
-        <h3>Check Box</h3>
-        <input type="checkbox" id="html" name="skills1" value="html">
-        <label for="html">HTML</label>
-        <input type="checkbox" id="css" name="skills2" value="css">
-        <label for="css">CSS</label>
-        <input type="checkbox" id="javascript" name="skills3" value="javascript">
-        <label for="javascript">JavaScript</label>
+        <fieldset>
+            <legend>Check Box</legend>
+            <input type="checkbox" id="html" name="skills1" value="html">
+            <label for="html">HTML</label>
+            <input type="checkbox" id="css" name="skills2" value="css">
+            <label for="css">CSS</label>
+            <input type="checkbox" id="javascript" name="skills3" value="javascript">
+            <label for="javascript">JavaScript</label>
+        </fieldset>
         <br>
-        <h3>Submit Button</h3>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+        <fieldset>
+            <legend>Submit Button</legend>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
         <br>
-        <h3>Select Box</h3>
-        <select name="country" id="country">
-            <option value="india">India</option>
-            <option value="usa">USA</option>
-            <option value="uk">UK</option>
-            <option value="canada">Canada</option>
-            <option value="australia">Australia</option>
-        </select>
+        <fieldset>
+            <legend>Select Box</legend>
+            <select name="country" id="country">
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+            </select>
+        </fieldset>
         <br>
-        <h3>Text Area</h3>
-        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+        <fieldset>
+            <legend>Text Area</legend>
+            <textarea name="message" id="message" cols="30" rows="5"></textarea>
+        </fieldset>
         <br>
+        <fieldset>
+            <legend>Data list</legend>
+            <input type="text" id="fruit" name="fruit" list="fruits">
+            <datalist id="fruits">
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Orange</option>
+                <option>Pineapple</option>
+            </datalist>
+        </fieldset>
     </form>
 </body>
 </html>
