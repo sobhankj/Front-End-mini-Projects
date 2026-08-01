@@ -9,7 +9,28 @@ const modalCloseButton = document.querySelector('.modal_close_button');
 let isUsernameValid = false;
 let isPasswordValid = false;
 
+usernameInput.addEventListener('blur', () => {
+    if (usernameInput.value.length === 0) {
+        usernameErrorMessage.classList.remove('hidden');
+        usernameErrorMessage.textContent = 'Fill username field';
+        isUsernameValid = false;
+    } else {
+        usernameErrorMessage.textContent = 'Username must be at least 3 characters long';
+    }
+});
+
+passwordInput.addEventListener('blur', () => {
+    if (passwordInput.value.length === 0) {
+        passwordErrorMessage.classList.remove('hidden');
+        passwordErrorMessage.textContent = 'Fill password field';
+        isPasswordValid = false;
+    } else {
+        passwordErrorMessage.textContent = 'Password must be at least 8 characters long';
+    }
+});
+
 usernameInput.addEventListener('keyup', () => {
+    usernameErrorMessage.textContent = 'Username must be at least 3 characters long';
     if (usernameInput.value.length === 0) {
         usernameErrorMessage.classList.add('hidden');
         isUsernameValid = false;
@@ -25,6 +46,7 @@ usernameInput.addEventListener('keyup', () => {
 });
 
 passwordInput.addEventListener('keyup', () => {
+    passwordErrorMessage.textContent = 'Password must be at least 8 characters long';
     if (passwordInput.value.length === 0) {
         passwordErrorMessage.classList.add('hidden');
         isPasswordValid = false;
