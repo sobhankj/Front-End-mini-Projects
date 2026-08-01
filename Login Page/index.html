@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content_container">
+            <div class="inner_content_container">
+                <div class="header_container">
+                    <h1>Welcome Back ✌️</h1>
+                    <p>Today is a new day. It's your day. You shape it.<br>Sign in to start managing you projects.</p>
+                </div>
+                <div class="form_container">
+                    <form action="#">
+                        <div class="input_box">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Example@email.com">
+                        </div>
+                        <div class="input_box">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="At least 8 characters">
+                        </div>
+                        <div class="forget_password">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="signin_button">Sign in</button>
+                    </form>
+                </div>
+                <div class="or_divider">
+                    <span class="or_text_desktop">Or</span>
+                    <span class="or_text_mobile">Or sign in with</span>
+                </div>
+                <div class="signin_options_container">
+                    <div class="option_signin google_signin">
+                        <img src="./images/google.svg" alt="" width="35px">
+                        <p><span class="signin_label_full">Sign in with </span>Google</p>
+                    </div>
+                    <div class="option_signin facebook_signin">
+                        <img src="./images/facebook.svg" alt="" width="35px">
+                        <p><span class="signin_label_full">Sign in with </span>Facebook</p>
+                    </div>
+                </div>
+                <div class="signup_container">
+                    <p>Don't you have an account? <a href="#">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="main_image">
+            <img src="./images/main.png" alt="login iamge" class="main_image_img">
+        </div>
+    </div>
+</body>
+</html>

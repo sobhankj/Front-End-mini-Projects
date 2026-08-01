@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content_container {
+    width: 50%;
+    height: 100%;
+    padding: 40px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner_content_container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.header_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header_container p {
+    font-weight: 400;
+    line-height: 1.6;
+    color: #3d3d3d;
+}
+
+.form_container {
+    width: 100%;
+}
+
+.form_container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input_box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form_container form input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: rgb(231, 241, 241);
+    border: 1px solid #e0e0e0;
+    outline: none;
+}
+
+.forget_password {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.forget_password a {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.signin_button {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: #000631;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.or_divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #000000;
+    font-size: 14px;
+}
+
+.or_divider::before,
+.or_divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #a8a8a8;
+}
+
+.or_divider span {
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.or_text_mobile {
+    display: none;
+}
+
+.signin_options_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.option_signin {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgb(231, 241, 241);
+    border: 1px solid #e0e0e0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.signup_container a {
+    text-decoration: none;
+}
+
+.main_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.main_image_img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        align-items: flex-start;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 24px;
+    }
+
+    .main_image {
+        order: -1;
+        width: 100%;
+        height: auto;
+    }
+
+    .main_image_img {
+        width: 100%;
+        height: auto;
+        max-height: 180px;
+        object-fit: cover;
+    }
+
+    .content_container {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    .inner_content_container {
+        max-width: 100%;
+        gap: 24px;
+    }
+
+    .header_container {
+        gap: 12px;
+    }
+
+    .header_container h1 {
+        font-size: 28px;
+    }
+
+    .or_text_desktop {
+        display: none;
+    }
+
+    .or_text_mobile {
+        display: inline;
+        color: #6b6b6b;
+    }
+
+    .signin_options_container {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .option_signin {
+        flex: 1;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .option_signin img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .signin_label_full {
+        display: none;
+    }
+
+    .signup_container {
+        text-align: center;
+        width: 100%;
+    }
+}
