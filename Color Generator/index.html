@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Hive — Palette Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient background decorations -->
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__orb ambient__orb--one"></div>
+    <div class="ambient__orb ambient__orb--two"></div>
+    <div class="ambient__orb ambient__orb--three"></div>
+    <div class="ambient__grid"></div>
+  </div>
+
+  <div class="app">
+    <!-- ========== Header ========== -->
+    <header class="header">
+      <div class="logo" aria-hidden="true">
+        <svg class="logo__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M24 4L40.392 13.5V32.5L24 42L7.608 32.5V13.5L24 4Z"
+            stroke="url(#logoGrad)"
+            stroke-width="2.2"
+            fill="url(#logoFill)"
+          />
+          <path
+            d="M24 14L32.66 19V29L24 34L15.34 29V19L24 14Z"
+            fill="url(#logoInner)"
+            opacity="0.9"
+          />
+          <defs>
+            <linearGradient id="logoGrad" x1="8" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F5B942" />
+              <stop offset="1" stop-color="#E07A3D" />
+            </linearGradient>
+            <linearGradient id="logoFill" x1="24" y1="4" x2="24" y2="42" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F5B942" stop-opacity="0.18" />
+              <stop offset="1" stop-color="#E07A3D" stop-opacity="0.06" />
+            </linearGradient>
+            <linearGradient id="logoInner" x1="15" y1="14" x2="33" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F5B942" />
+              <stop offset="1" stop-color="#E07A3D" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 class="header__title">Color Hive</h1>
+      <p class="header__subtitle">Generate beautiful color palettes for your next project</p>
+    </header>
+
+    <!-- ========== Toolbar ========== -->
+    <section class="toolbar" aria-label="Palette controls">
+      <button type="button" class="btn btn--primary" id="generateBtn">
+        <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M10 2.5V4.5M10 15.5V17.5M4.5 10H2.5M17.5 10H15.5M5.05 5.05L6.46 6.46M13.54 13.54L14.95 14.95M14.95 5.05L13.54 6.46M6.46 13.54L5.05 14.95"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+          <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.6" />
+        </svg>
+        <span>Generate Palette</span>
+      </button>
+
+      <button type="button" class="btn btn--secondary" id="gradientBtn">
+        <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <rect x="2.5" y="4" width="15" height="12" rx="2" stroke="currentColor" stroke-width="1.6" />
+          <path d="M2.5 10H17.5" stroke="currentColor" stroke-width="1.6" />
+          <path d="M7 4V16" stroke="currentColor" stroke-width="1.6" opacity="0.45" />
+          <path d="M13 4V16" stroke="currentColor" stroke-width="1.6" opacity="0.45" />
+        </svg>
+        <span>Create Gradient</span>
+      </button>
+
+      <div class="mood">
+        <label class="mood__label" for="moodSelect">Mood</label>
+        <div class="mood__wrap">
+          <select class="mood__select" id="moodSelect" name="mood">
+            <option value="random" selected>Random</option>
+            <option value="warm">Warm</option>
+            <option value="cold">Cold</option>
+            <option value="ocean">Ocean</option>
+            <option value="nature">Nature</option>
+            <option value="sunset">Sunset</option>
+            <option value="cyberpunk">Cyberpunk</option>
+            <option value="pastel">Pastel</option>
+            <option value="luxury">Luxury</option>
+            <option value="neon">Neon</option>
+          </select>
+          <svg class="mood__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Honeycomb Palette ========== -->
+    <section class="palette" aria-label="Color palette">
+      <div class="honeycomb">
+        <!-- Row 1: Hex 1 & Hex 2 -->
+        <div class="honeycomb__row honeycomb__row--top">
+          <!-- Hex 1 — selected + unlocked -->
+          <article
+            class="hex hex--selected"
+            style="--swatch: #FF6B35"
+            data-color="#FF6B35"
+            data-name="Sunset Orange"
+            aria-label="Sunset Orange, #FF6B35"
+          >
+            <div class="hex__shape">
+              <div class="hex__swatch"></div>
+              <div class="hex__content">
+                <span class="hex__badge" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <code class="hex__code">#FF6B35</code>
+                <button
+                  type="button"
+                  class="lock"
+                  aria-label="Lock color"
+                  aria-pressed="false"
+                  title="Lock color"
+                >
+                  <!-- Unlocked icon -->
+                  <svg class="lock__icon lock__icon--open" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M7 9V6.5C7 4.57 8.57 3 10.5 3C11.9 3 13.1 3.84 13.66 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="10" cy="13" r="1.25" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hex 2 — selected + unlocked -->
+          <article
+            class="hex hex--selected"
+            style="--swatch: #118AB2"
+            data-color="#118AB2"
+            data-name="Ocean Blue"
+            aria-label="Ocean Blue, #118AB2"
+          >
+            <div class="hex__shape">
+              <div class="hex__swatch"></div>
+              <div class="hex__content">
+                <span class="hex__badge" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <code class="hex__code">#118AB2</code>
+                <button
+                  type="button"
+                  class="lock"
+                  aria-label="Lock color"
+                  aria-pressed="false"
+                  title="Lock color"
+                >
+                  <!-- Unlocked icon -->
+                  <svg class="lock__icon lock__icon--open" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M7 9V6.5C7 4.57 8.57 3 10.5 3C11.9 3 13.1 3.84 13.66 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="10" cy="13" r="1.25" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Row 2: Hex 3, Hex 4, Hex 5 -->
+        <div class="honeycomb__row honeycomb__row--bottom">
+          <!-- Hex 3 — unlocked -->
+          <article
+            class="hex"
+            style="--swatch: #2D6A4F"
+            data-color="#2D6A4F"
+            data-name="Forest Green"
+            aria-label="Forest Green, #2D6A4F"
+          >
+            <div class="hex__shape">
+              <div class="hex__swatch"></div>
+              <div class="hex__content">
+                <span class="hex__badge" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <code class="hex__code">#2D6A4F</code>
+                <button
+                  type="button"
+                  class="lock"
+                  aria-label="Lock color"
+                  aria-pressed="false"
+                  title="Lock color"
+                >
+                  <svg class="lock__icon lock__icon--open" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M7 9V6.5C7 4.57 8.57 3 10.5 3C11.9 3 13.1 3.84 13.66 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="10" cy="13" r="1.25" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hex 4 — unlocked -->
+          <article
+            class="hex"
+            style="--swatch: #E9C46A"
+            data-color="#E9C46A"
+            data-name="Honey Gold"
+            aria-label="Honey Gold, #E9C46A"
+          >
+            <div class="hex__shape">
+              <div class="hex__swatch"></div>
+              <div class="hex__content">
+                <span class="hex__badge" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <code class="hex__code">#E9C46A</code>
+                <button
+                  type="button"
+                  class="lock"
+                  aria-label="Lock color"
+                  aria-pressed="false"
+                  title="Lock color"
+                >
+                  <svg class="lock__icon lock__icon--open" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M7 9V6.5C7 4.57 8.57 3 10.5 3C11.9 3 13.1 3.84 13.66 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="10" cy="13" r="1.25" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hex 5 — unlocked -->
+          <article
+            class="hex"
+            style="--swatch: #9B5DE5"
+            data-color="#9B5DE5"
+            data-name="Violet Bloom"
+            aria-label="Violet Bloom, #9B5DE5"
+          >
+            <div class="hex__shape">
+              <div class="hex__swatch"></div>
+              <div class="hex__content">
+                <span class="hex__badge" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <code class="hex__code">#9B5DE5</code>
+                <button
+                  type="button"
+                  class="lock"
+                  aria-label="Lock color"
+                  aria-pressed="false"
+                  title="Lock color"
+                >
+                  <svg class="lock__icon lock__icon--open" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M7 9V6.5C7 4.57 8.57 3 10.5 3C11.9 3 13.1 3.84 13.66 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <circle cx="10" cy="13" r="1.25" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Gradient Preview ========== -->
+    <section class="gradient-card is-hidden" aria-label="Gradient preview" hidden>
+      <div class="gradient-card__header">
+        <h2 class="gradient-card__title">Gradient Preview</h2>
+        <p class="gradient-card__hint">Select two or more colors, then create a gradient</p>
+      </div>
+
+      <div
+        class="gradient-card__preview"
+        id="gradientPreview"
+        style="background: linear-gradient(135deg, #FF6B35, #118AB2)"
+        role="img"
+        aria-label="Gradient preview from Sunset Orange to Ocean Blue"
+      ></div>
+
+      <div class="gradient-card__output">
+        <pre class="gradient-card__code" id="gradientCode"><code>linear-gradient(
+  135deg,
+  #FF6B35,
+  #118AB2
+)</code></pre>
+        <button type="button" class="copy-btn" id="copyBtn" aria-label="Copy CSS gradient" title="Copy CSS">
+          <svg class="copy-btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="7" y="7" width="9" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" />
+            <path
+              d="M13 7V5.5C13 4.67 12.33 4 11.5 4H5.5C4.67 4 4 4.67 4 5.5V13.5C4 14.33 4.67 15 5.5 15H7"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span>Copy</span>
+        </button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Color Hive · Ready for your JavaScript</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
