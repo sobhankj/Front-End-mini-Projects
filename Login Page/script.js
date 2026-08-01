@@ -6,11 +6,41 @@ const passwordErrorMessage = document.querySelector('.password_error_message');
 const successModal = document.querySelector('#success_modal');
 const modalCloseButton = document.querySelector('.modal_close_button');
 
+let isUsernameValid = false;
+let isPasswordValid = false;
+
+usernameInput.addEventListener('keyup', () => {
+    if (usernameInput.value.length === 0) {
+        usernameErrorMessage.classList.add('hidden');
+        isUsernameValid = false;
+    } else {
+        if (usernameInput.value.length < 3) {
+            usernameErrorMessage.classList.remove('hidden');
+            isUsernameValid = false;
+        } else {
+            usernameErrorMessage.classList.add('hidden')
+            isUsernameValid = true;
+        }
+    }
+});
+
+passwordInput.addEventListener('keyup', () => {
+    if (passwordInput.value.length === 0) {
+        passwordErrorMessage.classList.add('hidden');
+        isPasswordValid = false;
+    } else {
+        if (passwordInput.value.length < 8) {
+            passwordErrorMessage.classList.remove('hidden');
+            isPasswordValid = false;
+        } else {
+            passwordErrorMessage.classList.add('hidden');
+            isPasswordValid = true;
+        }
+    }
+});
+
 signinBtn.addEventListener('click', (e) => {
     e.preventDefault();
-
-    const isUsernameValid = usernameInput.value.length >= 3;
-    const isPasswordValid = passwordInput.value.length >= 8;
 
     if (!isUsernameValid) {
         usernameErrorMessage.classList.remove('hidden');
