@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TicketFinder — search routes, compare prices, and book travel tickets with ease." />
+  <title>TicketFinder — Find the best travel tickets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient background decorations -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb--one"></div>
+    <div class="bg-orb bg-orb--two"></div>
+    <div class="bg-orb bg-orb--three"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand brand--nav" aria-label="TicketFinder home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="8" width="28" height="16" rx="4" stroke="currentColor" stroke-width="2" />
+            <circle cx="11" cy="16" r="2" fill="currentColor" />
+            <path d="M16 16h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="brand-name">TicketFinder</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#search">Search</a>
+        <a href="#results">Tickets</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#history">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== Hero ========== -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-brand">
+          <span class="brand-mark brand-mark--hero" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="12" width="40" height="24" rx="6" stroke="currentColor" stroke-width="2.5" />
+              <circle cx="16" cy="24" r="3" fill="currentColor" />
+              <path d="M24 24h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M8 20h4M36 28h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+            </svg>
+          </span>
+          <h1 id="hero-title" class="hero-title">TicketFinder</h1>
+        </div>
+        <p class="hero-subtitle">Find the best travel tickets in seconds</p>
+        <p class="hero-description">
+          Search routes, compare prices, and book your next trip with ease.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#search" class="btn btn-primary btn-lg">Start searching</a>
+          <a href="#results" class="btn btn-ghost btn-lg">Browse tickets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Favorite Routes ========== -->
+    <section id="favorites" class="section favorites-section is-hidden" aria-labelledby="favorites-heading" hidden>
+      <div class="container">
+        <header class="section-header">
+          <h2 id="favorites-heading" class="section-title">Favorite Routes</h2>
+          <p class="section-subtitle">Your saved routes for one-tap searching.</p>
+        </header>
+        <ul id="favorite-list" class="favorite-list"></ul>
+      </div>
+    </section>
+
+    <!-- ========== Search ========== -->
+    <section id="search" class="section search-section" aria-labelledby="search-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="search-heading" class="section-title">Search tickets</h2>
+          <p class="section-subtitle">Choose your route and date to find available tickets.</p>
+        </header>
+
+        <form id="search-form" class="search-card glass" action="#" method="get">
+          <div class="search-grid">
+            <!-- Origin -->
+            <fieldset class="form-group form-group--origin">
+              <legend class="form-legend">Origin</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="origin-province" class="label">Province</label>
+                  <select id="origin-province" name="origin-province" class="input">
+                    <option value="" disabled selected>Select origin province</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="origin-city" class="label">City</label>
+                  <select id="origin-city" name="origin-city" class="input" disabled>
+                    <option value="" disabled selected>Select origin city</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Destination -->
+            <fieldset class="form-group form-group--destination">
+              <legend class="form-legend">Destination</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="destination-province" class="label">Province</label>
+                  <select id="destination-province" name="destination-province" class="input">
+                    <option value="" disabled selected>Select destination province</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="destination-city" class="label">City</label>
+                  <select id="destination-city" name="destination-city" class="input" disabled>
+                    <option value="" disabled selected>Select destination city</option>
+                  </select>
+                  <p id="destination-city-error" class="field-error is-hidden">Please select a destination city.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Favorite route toggle -->
+            <div class="form-group form-group--favorite">
+              <button
+                type="button"
+                id="favorite-toggle"
+                class="favorite-toggle"
+                aria-pressed="false"
+                aria-label="Save current route as favorite"
+              >
+                <span class="favorite-toggle__star" aria-hidden="true">☆</span>
+                <span class="favorite-toggle__text">Save route as favorite</span>
+              </button>
+            </div>
+
+            <!-- Travel date -->
+            <div class="form-group form-group--meta">
+              <div class="field field--date">
+                <label for="travel-date" class="label">Travel date</label>
+                <input
+                  type="date"
+                  id="travel-date"
+                  name="travel-date"
+                  class="input"
+                  value="2026-08-15"
+                />
+              </div>
+            </div>
+
+            <!-- Quick destination search -->
+            <div class="form-group form-group--quick">
+              <div class="field field--full">
+                <label for="quick-destination" class="label">Quick destination search</label>
+                <div class="input-with-icon">
+                  <svg class="input-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.75" />
+                    <path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                  </svg>
+                  <input
+                    type="search"
+                    id="quick-destination"
+                    name="quick-destination"
+                    class="input input--search"
+                    placeholder="Search destination..."
+                    autocomplete="off"
+                  />
+                </div>
+                <!-- JS can inject filtered suggestions here -->
+                <ul id="quick-destination-results" class="quick-results" hidden></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="search-actions">
+            <button type="submit" id="search-btn" class="btn btn-primary btn-cta btn-glow">
+              Search Tickets
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== Search Results ========== -->
+    <section id="results" class="section results-section is-hidden" aria-labelledby="results-heading" hidden>
+      <div class="container">
+        <header class="section-header section-header--row">
+          <div>
+            <h2 id="results-heading" class="section-title">Available Tickets</h2>
+            <p class="section-subtitle">
+              <span id="results-count">0</span> tickets found for your search
+            </p>
+          </div>
+          <div class="results-filters" id="results-filters">
+            <button type="button" class="chip chip--filter is-active" data-filter="all">All</button>
+            <button type="button" class="chip chip--filter" data-filter="vip">VIP</button>
+            <button type="button" class="chip chip--filter" data-filter="business">Business</button>
+            <button type="button" class="chip chip--filter" data-filter="economy">Economy</button>
+          </div>
+        </header>
+
+        <div id="ticket-list" class="ticket-grid" role="list"></div>
+
+        <div id="empty-state" class="empty-state is-hidden" role="status" aria-live="polite" hidden>
+          <div class="empty-state__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" opacity="0.25" />
+              <path d="M22 28h20M22 36h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              <circle cx="42" cy="40" r="8" stroke="currentColor" stroke-width="2" />
+              <path d="M47.5 45.5L52 50" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="empty-state__title">No tickets found</h3>
+          <p class="empty-state__text">Try changing your destination or date.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Search History ========== -->
+    <section id="history" class="section history-section is-hidden" aria-labelledby="history-heading" hidden>
+      <div class="container">
+        <header class="section-header">
+          <h2 id="history-heading" class="section-title">Recent Searches</h2>
+          <p class="section-subtitle">Pick up where you left off.</p>
+        </header>
+        <ol id="history-list" class="history-timeline"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">TicketFinder</p>
+      <p class="footer-copy">&copy; 2026 TicketFinder. Visual interface only.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
