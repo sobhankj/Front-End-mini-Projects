@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Climate Lab — Temperature Converter & Analysis Dashboard. Convert temperatures, compare values, and track conversion history." />
+  <title>Climate Lab — Temperature Converter & Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__orb ambient__orb--one"></div>
+    <div class="ambient__orb ambient__orb--two"></div>
+    <div class="ambient__orb ambient__orb--three"></div>
+    <div class="ambient__grid"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="Climate Lab home">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">Climate Lab</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#converter">Convert</a>
+        <a href="#compare">Compare</a>
+        <a href="#famous">Famous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__content">
+        <p class="hero__eyebrow">Analysis Dashboard</p>
+        <h1 id="hero-title" class="hero__title">Climate Lab</h1>
+        <p class="hero__subtitle">Temperature Converter &amp; Analysis Dashboard</p>
+        <p class="hero__description">
+          Convert temperatures, compare values, analyze climate conditions, and track conversion history.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#converter">Start converting</a>
+          <a class="btn btn--ghost" href="#famous">Explore famous temps</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Temperature Converter -->
+    <section id="converter" class="section" aria-labelledby="converter-heading">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="converter-heading">Temperature Converter</h2>
+          <p class="section__lede">Enter a value in any unit — the others update automatically.</p>
+        </header>
+
+        <div class="converter-workspace">
+          <div class="glass-card converter-card">
+            <div class="converter-grid">
+              <div class="field">
+                <label class="field__label" for="celsius-input">Celsius</label>
+                <div class="field__control">
+                  <input
+                    type="text"
+                    id="celsius-input"
+                    class="input"
+                    name="celsius"
+                    placeholder="Enter Celsius"
+                    inputmode="decimal"
+                    autocomplete="off"
+                    aria-describedby="celsius-hint"
+                    onchange="onTemperatureChange('celsius')"
+                    oninput="onTemperatureChange('celsius')"
+                  />
+                  <span class="field__unit" aria-hidden="true">°C</span>
+                </div>
+                <p id="celsius-hint" class="field__hint">Degrees Celsius</p>
+                <p id="celsius-error" class="field__error" hidden>Please enter a valid number.</p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="fahrenheit-input">Fahrenheit</label>
+                <div class="field__control">
+                  <input
+                    type="text"
+                    id="fahrenheit-input"
+                    class="input"
+                    name="fahrenheit"
+                    placeholder="Enter Fahrenheit"
+                    inputmode="decimal"
+                    autocomplete="off"
+                    aria-describedby="fahrenheit-hint"
+                    onchange="onTemperatureChange('fahrenheit')"
+                    oninput="onTemperatureChange('fahrenheit')"
+                  />
+                  <span class="field__unit" aria-hidden="true">°F</span>
+                </div>
+                <p id="fahrenheit-hint" class="field__hint">Degrees Fahrenheit</p>
+                <p id="fahrenheit-error" class="field__error" hidden>Please enter a valid number.</p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="kelvin-input">Kelvin</label>
+                <div class="field__control">
+                  <input
+                    type="text"
+                    id="kelvin-input"
+                    class="input"
+                    name="kelvin"
+                    placeholder="Enter Kelvin"
+                    inputmode="decimal"
+                    autocomplete="off"
+                    aria-describedby="kelvin-hint"
+                    onchange="onTemperatureChange('kelvin')"
+                    oninput="onTemperatureChange('kelvin')"
+                  />
+                  <span class="field__unit" aria-hidden="true">K</span>
+                </div>
+                <p id="kelvin-hint" class="field__hint">Absolute temperature</p>
+                <p id="kelvin-error" class="field__error" hidden>Please enter a valid number.</p>
+              </div>
+            </div>
+
+            <!-- Live Conversion Result — theme colors set via CSS variables from script.js -->
+            <div
+              id="live-result"
+              class="result-card"
+              data-status="nature"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <p id="live-result-status" class="result-card__label">Live conversion · Nature</p>
+              <div class="result-card__values">
+                <div class="result-value">
+                  <span id="result-celsius" class="result-value__number">25</span>
+                  <span class="result-value__unit">°C</span>
+                </div>
+                <div class="result-value__divider" aria-hidden="true"></div>
+                <div class="result-value">
+                  <span id="result-fahrenheit" class="result-value__number">77</span>
+                  <span class="result-value__unit">°F</span>
+                </div>
+                <div class="result-value__divider" aria-hidden="true"></div>
+                <div class="result-value">
+                  <span id="result-kelvin" class="result-value__number">298.15</span>
+                  <span class="result-value__unit">K</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="thermometer-aside" aria-label="Thermometer">
+            <div
+              id="thermometer"
+              class="thermometer"
+              role="img"
+              aria-label="Thermometer showing 25 degrees Celsius"
+            >
+              <div class="thermometer__scale" aria-hidden="true">
+                <span class="thermometer__tick" style="--tick: 100">100</span>
+                <span class="thermometer__tick" style="--tick: 75">75</span>
+                <span class="thermometer__tick" style="--tick: 50">50</span>
+                <span class="thermometer__tick" style="--tick: 25">25</span>
+                <span class="thermometer__tick" style="--tick: 0">0</span>
+                <span class="thermometer__tick" style="--tick: -25">-25</span>
+              </div>
+
+              <div class="thermometer__tube">
+                <div id="thermometer-fill" class="thermometer-fill"></div>
+              </div>
+              <div id="thermometer-bulb" class="thermometer__bulb" aria-hidden="true"></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temperature Comparison -->
+    <section id="compare" class="section section--alt" aria-labelledby="compare-heading">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="compare-heading">Temperature Comparison</h2>
+          <p class="section__lede">Compare two Celsius values side by side.</p>
+        </header>
+
+        <div class="glass-card compare-card">
+          <div class="compare-grid">
+            <div class="field">
+              <label class="field__label" for="temp-a-input">Temperature A</label>
+              <div class="field__control">
+                <input
+                  type="text"
+                  id="temp-a-input"
+                  class="input"
+                  name="temp-a"
+                  placeholder="Enter first temperature"
+                  inputmode="decimal"
+                  autocomplete="off"
+                />
+                <span class="field__unit" aria-hidden="true">°C</span>
+              </div>
+              <p id="temp-a-error" class="field__error" hidden>Please enter a valid number.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="temp-b-input">Temperature B</label>
+              <div class="field__control">
+                <input
+                  type="text"
+                  id="temp-b-input"
+                  class="input"
+                  name="temp-b"
+                  placeholder="Enter second temperature"
+                  inputmode="decimal"
+                  autocomplete="off"
+                />
+                <span class="field__unit" aria-hidden="true">°C</span>
+              </div>
+              <p id="temp-b-error" class="field__error" hidden>Please enter a valid number.</p>
+            </div>
+          </div>
+
+          <div class="compare-actions">
+            <button
+              type="button"
+              id="compare-btn"
+              class="btn btn--primary"
+              onclick="startComparison()"
+            >
+              Start comparison
+            </button>
+          </div>
+
+          <div id="comparison-result" class="compare-result" aria-live="polite">
+            <p class="compare-result__label">Comparison result</p>
+            <p id="comparison-result-text" class="compare-result__text">
+              Enter two temperatures and press Start comparison.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Famous Temperatures -->
+    <section id="famous" class="section" aria-labelledby="famous-heading">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="famous-heading">Famous Temperatures</h2>
+          <p class="section__lede">Tap a reference point to load it into the converter.</p>
+        </header>
+
+        <div id="famous-temps" class="famous-grid">
+          <button type="button" class="famous-card" data-celsius="0" id="famous-water-freezes">
+            <span class="famous-card__name">Water Freezes</span>
+            <span class="famous-card__temp" id="famous-temp-0">0°C</span>
+          </button>
+
+          <button type="button" class="famous-card" data-celsius="22" id="famous-room">
+            <span class="famous-card__name">Room Temperature</span>
+            <span class="famous-card__temp" id="famous-temp-22">22°C</span>
+          </button>
+
+          <button type="button" class="famous-card" data-celsius="37" id="famous-body">
+            <span class="famous-card__name">Human Body</span>
+            <span class="famous-card__temp" id="famous-temp-37">37°C</span>
+          </button>
+
+          <button type="button" class="famous-card" data-celsius="100" id="famous-boils">
+            <span class="famous-card__name">Water Boils</span>
+            <span class="famous-card__temp" id="famous-temp-100">100°C</span>
+          </button>
+
+          <button type="button" class="famous-card" data-celsius="1200" id="famous-lava">
+            <span class="famous-card__name">Lava</span>
+            <span class="famous-card__temp" id="famous-temp-1200">1200°C</span>
+          </button>
+
+          <button type="button" class="famous-card" data-celsius="5500" id="famous-sun">
+            <span class="famous-card__name">Sun Surface</span>
+            <span class="famous-card__temp" id="famous-temp-5500">5500°C</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__brand">Climate Lab</p>
+      <p class="site-footer__note">Temperature Converter &amp; Analysis Dashboard</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
