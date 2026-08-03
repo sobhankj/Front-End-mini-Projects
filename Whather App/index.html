@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCast — Explore Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-sunny" id="appBody">
+  <!-- Atmospheric background layers -->
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb--one"></div>
+    <div class="orb orb--two"></div>
+    <div class="orb orb--three"></div>
+    <div class="orb orb--four"></div>
+    <div class="glow glow--top"></div>
+    <div class="glow glow--bottom"></div>
+    <div class="light-ray"></div>
+  </div>
+
+  <div class="app">
+    <!-- 1. App Header -->
+    <header class="app-header" id="appHeader">
+      <div class="brand">
+        <span class="brand__icon" aria-hidden="true">⛅</span>
+        <div class="brand__text">
+          <h1 class="brand__name" id="appTitle">SkyCast</h1>
+          <p class="brand__subtitle" id="appSubtitle">
+            Explore weather conditions around your favorite cities
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main" id="appMain">
+      <!-- 2. Search Section -->
+      <section class="search-section" id="searchSection" aria-labelledby="searchHeading">
+        <h2 class="visually-hidden" id="searchHeading">Search for a city</h2>
+
+        <form class="search-form" id="searchForm" action="#" method="get" role="search">
+          <div class="search-field" id="searchField">
+            <label class="search-label" for="cityInput">City</label>
+            <div class="search-input-wrap" id="searchInputWrap">
+              <span class="search-input-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </span>
+              <input
+                type="search"
+                id="cityInput"
+                class="search-input"
+                name="city"
+                placeholder="Search for a city..."
+                autocomplete="off"
+                aria-autocomplete="list"
+                aria-controls="searchSuggestions"
+                aria-expanded="false"
+                aria-describedby="searchError"
+              />
+            </div>
+
+            <!-- Search Suggestions Dropdown (hidden by default; toggle with .is-visible) -->
+            <ul
+              class="suggestions"
+              id="searchSuggestions"
+              role="listbox"
+              aria-label="City suggestions"
+              hidden
+            >
+              <li class="suggestions__item" role="option" data-city="Tehran" tabindex="-1">Tehran</li>
+              <li class="suggestions__item" role="option" data-city="Shiraz" tabindex="-1">Shiraz</li>
+              <li class="suggestions__item" role="option" data-city="Mashhad" tabindex="-1">Mashhad</li>
+              <li class="suggestions__item" role="option" data-city="Tabriz" tabindex="-1">Tabriz</li>
+              <li class="suggestions__item" role="option" data-city="Isfahan" tabindex="-1">Isfahan</li>
+            </ul>
+
+            <p class="search-error" id="searchError" role="alert" hidden>
+              Please enter a valid city name.
+            </p>
+          </div>
+
+          <button type="submit" class="search-btn" id="searchBtn">
+            Check Weather
+          </button>
+        </form>
+      </section>
+
+      <!-- Empty State (hidden when weather is shown; toggle with .is-visible / remove hidden) -->
+      <section
+        class="empty-state"
+        id="emptyState"
+        aria-labelledby="emptyStateTitle"
+        hidden
+      >
+        <div class="empty-state__visual" aria-hidden="true">🌤️</div>
+        <h2 class="empty-state__title" id="emptyStateTitle">No city selected</h2>
+        <p class="empty-state__text" id="emptyStateText">
+          Search for a city to see weather information.
+        </p>
+      </section>
+
+      <!-- 3. Current Weather Card -->
+      <section
+        class="weather-hero"
+        id="currentWeather"
+        aria-labelledby="locationName"
+        data-weather-state="sunny"
+      >
+        <article class="weather-card" id="weatherCard">
+          <div class="weather-card__top">
+            <p class="weather-card__day" id="dayLabel">Today</p>
+            <h2 class="weather-card__location" id="locationName">Tehran</h2>
+          </div>
+
+          <div class="weather-card__main">
+            <span class="weather-card__icon" id="weatherIcon" aria-hidden="true">☀️</span>
+            <p class="weather-card__temp" id="temperature">
+              <span id="temperatureValue">28</span><span class="weather-card__unit" id="temperatureUnit">°C</span>
+            </p>
+          </div>
+
+          <p class="weather-card__condition" id="condition">Sunny</p>
+        </article>
+      </section>
+
+      <!-- 4. Weather Details Grid -->
+      <section class="details-section" id="weatherDetails" aria-labelledby="detailsHeading">
+        <h2 class="section-title" id="detailsHeading">Weather Details</h2>
+
+        <div class="details-grid" id="detailsGrid">
+          <article class="detail-card" id="humidityCard">
+            <span class="detail-card__icon" aria-hidden="true">💧</span>
+            <p class="detail-card__label" id="humidityLabel">Humidity</p>
+            <p class="detail-card__value" id="humidityValue">68%</p>
+          </article>
+
+          <article class="detail-card" id="windCard">
+            <span class="detail-card__icon" aria-hidden="true">💨</span>
+            <p class="detail-card__label" id="windLabel">Wind Speed</p>
+            <p class="detail-card__value" id="windValue">14 km/h</p>
+          </article>
+
+          <article class="detail-card" id="airQualityCard">
+            <span class="detail-card__icon" aria-hidden="true">🍃</span>
+            <p class="detail-card__label" id="airQualityLabel">Air Quality</p>
+            <p class="detail-card__value" id="airQualityValue">Good</p>
+          </article>
+
+          <article class="detail-card" id="moodCard">
+            <span class="detail-card__icon" aria-hidden="true">✨</span>
+            <p class="detail-card__label" id="moodLabel">Weather Mood</p>
+            <p class="detail-card__value" id="moodValue">Perfect Day</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. Weather Tips Section -->
+      <section class="tips-section" id="weatherTips" aria-labelledby="tipsHeading">
+        <article class="tip-card" id="tipCard">
+          <div class="tip-card__badge" aria-hidden="true">💡</div>
+          <h2 class="tip-card__title" id="tipsHeading">Today's Tip</h2>
+          <p class="tip-card__content" id="tipContent">
+            Perfect weather for a walk outside.
+            Stay hydrated and enjoy the sunshine.
+          </p>
+        </article>
+      </section>
+
+      <!-- 6. Popular Cities Section -->
+      <section class="cities-section" id="popularCitiesSection" aria-labelledby="popularCitiesHeading">
+        <h2 class="section-title" id="popularCitiesHeading">Popular Cities</h2>
+        <div class="city-chips" id="popularCities" role="list">
+          <button type="button" class="city-chip" role="listitem" data-city="Tehran">Tehran</button>
+          <button type="button" class="city-chip" role="listitem" data-city="Shiraz">Shiraz</button>
+          <button type="button" class="city-chip" role="listitem" data-city="Mashhad">Mashhad</button>
+          <button type="button" class="city-chip" role="listitem" data-city="Tabriz">Tabriz</button>
+          <button type="button" class="city-chip" role="listitem" data-city="Isfahan">Isfahan</button>
+        </div>
+      </section>
+
+      <!-- 7. Recent Searches Section (hidden until user searches) -->
+      <section
+        class="recent-section"
+        id="recentSearchesSection"
+        aria-labelledby="recentSearchesHeading"
+        hidden
+      >
+        <h2 class="section-title" id="recentSearchesHeading">Recent Searches</h2>
+        <ul class="recent-list" id="recentSearches"></ul>
+      </section>
+    </main>
+
+    <footer class="app-footer" id="appFooter">
+      <p class="app-footer__text">SkyCast — Weather exploration</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
