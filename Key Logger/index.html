@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Typing Analytics Pro — fully functional typing analytics platform with WPM, accuracy, error tracking, and session history.">
+  <title>Typing Analytics Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-glow page-glow--left" aria-hidden="true"></div>
+  <div class="page-glow page-glow--right" aria-hidden="true"></div>
+
+  <div id="celebration" class="celebration" aria-live="polite">
+    <div class="celebration__card glass-card">
+      <p class="eyebrow">New Personal Best</p>
+      <p class="celebration__value metric-number" id="celebration-wpm">0</p>
+      <p class="celebration__label">Best WPM</p>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Typing Analytics Pro home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="8" width="26" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 20h3M13 20h2M17 20h4M23 20h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M11 14h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Typing Analytics</span>
+          <span class="brand__pro">Pro</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#test">Test Engine</a>
+        <a class="nav__link" href="#wpm">Speed</a>
+        <a class="nav__link" href="#accuracy">Accuracy</a>
+        <a class="nav__link" href="#errors">Errors</a>
+        <a class="nav__link" href="#sessions">Sessions</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--primary btn--sm" href="#test">Start Test</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section hero--compact" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Typing Analytics Platform · MVP</p>
+          <h1 id="hero-title" class="hero__title">
+            <span class="hero__brand">Typing Analytics Pro</span>
+          </h1>
+          <p class="hero__subtitle">
+            Practice with a real test engine, track live WPM and accuracy, diagnose mistypes, and keep every session in your history.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg btn--glow" href="#test">Open Test Engine</a>
+            <a class="btn btn--ghost btn--lg" href="#sessions">Session History</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero-illu glass-panel">
+            <div class="hero-illu__orbit"></div>
+            <div class="hero-illu__screen">
+              <div class="hero-illu__bar"><span></span><span></span><span></span></div>
+              <div class="hero-illu__metrics">
+                <div class="hero-illu__stat"><span class="hero-illu__label">WPM</span><span class="hero-illu__value" id="hero-wpm">0</span></div>
+                <div class="hero-illu__stat"><span class="hero-illu__label">ACC</span><span class="hero-illu__value" id="hero-acc">100%</span></div>
+                <div class="hero-illu__stat"><span class="hero-illu__label">BEST</span><span class="hero-illu__value" id="hero-best">0</span></div>
+              </div>
+              <div class="hero-illu__wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST ENGINE -->
+    <section id="test" class="section engine-section" aria-labelledby="engine-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow">Module 01 · Core</p>
+          <h2 id="engine-title" class="section-title">Typing Test Engine</h2>
+          <p class="section-desc">Click the prompt and type. The test starts on your first character.</p>
+        </div>
+
+        <div class="engine glass-card">
+          <div class="engine__toolbar">
+            <div class="engine__identity">
+              <h3 class="card-title">Active Challenge</h3>
+              <p class="card-subtitle" id="engine-subtitle">Medium · English · Time Based · 60s</p>
+            </div>
+            <div class="engine__status">
+              <span class="badge" id="engine-status-badge"><span id="engine-status-label">Ready</span></span>
+              <span class="engine__timer" id="engine-timer" aria-label="Timer">01:00</span>
+            </div>
+          </div>
+
+          <div class="engine__controls">
+            <fieldset class="control-group">
+              <legend class="control-label">Difficulty</legend>
+              <div class="segmented segmented--3" role="group" aria-label="Difficulty">
+                <label class="segmented__option"><input type="radio" name="difficulty" data-pref="difficulty" value="easy"><span>Easy</span></label>
+                <label class="segmented__option"><input type="radio" name="difficulty" data-pref="difficulty" value="medium" checked><span>Medium</span></label>
+                <label class="segmented__option"><input type="radio" name="difficulty" data-pref="difficulty" value="hard"><span>Hard</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="control-group">
+              <legend class="control-label">Language</legend>
+              <div class="segmented segmented--2" role="group" aria-label="Language">
+                <label class="segmented__option"><input type="radio" name="language" data-pref="language" value="en" checked><span>English</span></label>
+                <label class="segmented__option"><input type="radio" name="language" data-pref="language" value="fa"><span>Persian</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="control-group control-group--wide">
+              <legend class="control-label">Test Mode</legend>
+              <div class="segmented segmented--2" role="group" aria-label="Test mode">
+                <label class="segmented__option"><input type="radio" name="mode" data-pref="mode" value="time" checked><span>Time Mode</span></label>
+                <label class="segmented__option"><input type="radio" name="mode" data-pref="mode" value="words"><span>Word Count</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="control-group control-group--wide" id="time-options">
+              <legend class="control-label">Duration</legend>
+              <div class="segmented segmented--3" role="group" aria-label="Duration">
+                <label class="segmented__option"><input type="radio" name="durationSec" data-pref="durationSec" value="30"><span>30s</span></label>
+                <label class="segmented__option"><input type="radio" name="durationSec" data-pref="durationSec" value="60" checked><span>60s</span></label>
+                <label class="segmented__option"><input type="radio" name="durationSec" data-pref="durationSec" value="120"><span>120s</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="control-group control-group--wide is-hidden" id="word-options">
+              <legend class="control-label">Word Count</legend>
+              <div class="segmented segmented--3" role="group" aria-label="Word count">
+                <label class="segmented__option"><input type="radio" name="wordCount" data-pref="wordCount" value="25"><span>25</span></label>
+                <label class="segmented__option"><input type="radio" name="wordCount" data-pref="wordCount" value="50" checked><span>50</span></label>
+                <label class="segmented__option"><input type="radio" name="wordCount" data-pref="wordCount" value="100"><span>100</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="engine__progress" aria-label="Completion progress">
+            <div class="engine__progress-meta">
+              <span>Completion</span>
+              <span class="engine__progress-value" id="progress-value">0%</span>
+            </div>
+            <div class="progress__track progress__track--lg">
+              <div class="progress__fill" id="progress-fill"></div>
+            </div>
+          </div>
+
+          <div
+            id="typing-surface"
+            class="prompt-stage typing-surface"
+            tabindex="0"
+            role="textbox"
+            aria-multiline="true"
+            aria-label="Typing test surface. Click here and start typing."
+          >
+            <p id="prompt-text" class="prompt-text prompt-text--xl"></p>
+            <div class="prompt-legend" aria-hidden="true">
+              <span><i class="swatch swatch--correct"></i> Correct</span>
+              <span><i class="swatch swatch--incorrect"></i> Incorrect</span>
+              <span><i class="swatch swatch--current"></i> Current</span>
+              <span><i class="swatch swatch--neutral"></i> Untyped</span>
+            </div>
+            <p class="input-help">Tip: click this area, then type. Esc pauses. Changing settings restarts the test.</p>
+          </div>
+
+          <div class="engine__actions">
+            <button class="btn btn--primary btn--lg btn--glow" type="button" id="btn-start">Start</button>
+            <button class="btn btn--ghost btn--lg" type="button" id="btn-pause" disabled>Pause</button>
+            <button class="btn btn--ghost btn--lg" type="button" id="btn-restart">Restart</button>
+          </div>
+
+          <div class="engine__live-strip" aria-label="Live snapshot">
+            <div class="live-chip"><span class="live-chip__label">Live WPM</span><span class="live-chip__value metric-number" id="live-wpm">0</span></div>
+            <div class="live-chip"><span class="live-chip__label">Accuracy</span><span class="live-chip__value metric-number" id="live-accuracy">100%</span></div>
+            <div class="live-chip"><span class="live-chip__label">Errors</span><span class="live-chip__value metric-number" id="live-errors">0</span></div>
+            <div class="live-chip"><span class="live-chip__label">Streak</span><span class="live-chip__value metric-number" id="live-streak">0</span></div>
+            <div class="live-chip"><span class="live-chip__label">Chars</span><span class="live-chip__value metric-number" id="live-chars">0</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WPM -->
+    <section id="wpm" class="section module-section" aria-labelledby="wpm-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Module 02 · Speed Lab</p>
+          <h2 id="wpm-title" class="section-title">WPM Calculator</h2>
+          <p class="section-desc">Live speed metrics update every second while you type.</p>
+        </div>
+
+        <div class="wpm-layout">
+          <article class="metric-hero glass-card metric-hero--glow">
+            <div class="metric-hero__head">
+              <p class="metric-hero__label">Current WPM</p>
+            </div>
+            <p class="metric-hero__value metric-number metric-number--xl" id="metric-current-wpm">0</p>
+            <div class="ring-stat">
+              <div class="ring ring--wpm" id="wpm-ring" role="img" aria-label="Progress toward best WPM">
+                <span class="ring__value" id="wpm-ring-value">0%</span>
+                <span class="ring__caption">of best</span>
+              </div>
+              <div class="metric-hero__aside">
+                <p>Formula: (correct characters ÷ 5) ÷ minutes elapsed.</p>
+              </div>
+            </div>
+          </article>
+
+          <div class="wpm-grid">
+            <article class="stat-widget glass-card">
+              <p class="stat-widget__label">Average WPM</p>
+              <p class="stat-widget__value metric-number" id="metric-average-wpm">0</p>
+            </article>
+            <article class="stat-widget glass-card" id="best-card">
+              <p class="stat-widget__label">Best WPM</p>
+              <p class="stat-widget__value metric-number" id="metric-best-wpm">0</p>
+              <p class="stat-widget__hint">Saved in localStorage</p>
+            </article>
+            <article class="stat-widget glass-card">
+              <p class="stat-widget__label">Peak WPM</p>
+              <p class="stat-widget__value metric-number" id="metric-peak-wpm">0</p>
+            </article>
+            <article class="stat-widget glass-card">
+              <p class="stat-widget__label">Characters / Min</p>
+              <p class="stat-widget__value metric-number" id="metric-cpm">0</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCURACY -->
+    <section id="accuracy" class="section module-section" aria-labelledby="accuracy-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Module 03 · Precision Lab</p>
+          <h2 id="accuracy-title" class="section-title">Accuracy Calculator</h2>
+          <p class="section-desc">Correct vs incorrect keystrokes with live rating projection.</p>
+        </div>
+
+        <div class="accuracy-layout">
+          <article class="gauge-card glass-card">
+            <div class="gauge">
+              <div class="gauge__ring ring ring--accuracy" id="accuracy-ring">
+                <span class="gauge__value metric-number" id="metric-accuracy">100%</span>
+                <span class="gauge__label">Live Accuracy</span>
+              </div>
+            </div>
+            <div class="rating-panel">
+              <p class="rating-panel__label">Projected Rating</p>
+              <p class="rating-panel__value rating rating--excellent" id="metric-rating-live">Perfect</p>
+              <ul class="rating-scale" id="rating-scale" aria-label="Accuracy ratings">
+                <li>Perfect</li>
+                <li>Excellent</li>
+                <li>Good</li>
+                <li>Average</li>
+                <li>Needs Improvement</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="accuracy-stats">
+            <article class="feedback-card glass-card feedback-card--success">
+              <span class="feedback-card__icon" aria-hidden="true">✓</span>
+              <p class="feedback-card__label">Correct Characters</p>
+              <p class="feedback-card__value metric-number" id="metric-correct">0</p>
+            </article>
+            <article class="feedback-card glass-card feedback-card--error">
+              <span class="feedback-card__icon" aria-hidden="true">!</span>
+              <p class="feedback-card__label">Incorrect Characters</p>
+              <p class="feedback-card__value metric-number" id="metric-incorrect">0</p>
+            </article>
+            <article class="feedback-card glass-card">
+              <span class="feedback-card__icon" aria-hidden="true">⌫</span>
+              <p class="feedback-card__label">Backspaces Used</p>
+              <p class="feedback-card__value metric-number" id="metric-backspaces">0</p>
+            </article>
+            <article class="feedback-card glass-card">
+              <span class="feedback-card__icon" aria-hidden="true">Σ</span>
+              <p class="feedback-card__label">Total Typed</p>
+              <p class="feedback-card__value metric-number" id="live-chars-dup">—</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERRORS -->
+    <section id="errors" class="section module-section" aria-labelledby="errors-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Module 04 · Error Intelligence</p>
+          <h2 id="errors-title" class="section-title">Error Tracking System</h2>
+          <p class="section-desc">Mistyped keys, categories, timeline, and weakness analysis.</p>
+        </div>
+
+        <div class="errors-layout">
+          <article class="glass-card panel-card">
+            <div class="panel-card__head">
+              <h3 class="card-title">Most Mistyped Keys</h3>
+            </div>
+            <ul class="mistype-list" id="mistyped-list"></ul>
+          </article>
+
+          <article class="glass-card panel-card">
+            <div class="panel-card__head">
+              <h3 class="card-title">Error Categories</h3>
+            </div>
+            <ul class="category-grid">
+              <li class="category-card"><span class="category-card__label">Wrong Character</span><span class="category-card__value metric-number" id="cat-wrong">0</span></li>
+              <li class="category-card"><span class="category-card__label">Missing Character</span><span class="category-card__value metric-number" id="cat-missing">0</span></li>
+              <li class="category-card"><span class="category-card__label">Extra Character</span><span class="category-card__value metric-number" id="cat-extra">0</span></li>
+              <li class="category-card"><span class="category-card__label">Total Mistakes</span><span class="category-card__value metric-number" id="weak-total">0</span></li>
+            </ul>
+          </article>
+
+          <article class="glass-card panel-card panel-card--wide">
+            <div class="panel-card__head">
+              <h3 class="card-title">Error Timeline</h3>
+            </div>
+            <div class="error-timeline" aria-label="Mistake timeline">
+              <div class="error-timeline__axis"></div>
+              <div class="error-timeline__marks error-timeline__marks--abs" id="error-timeline-marks"></div>
+              <div class="error-timeline__labels"><span>Start</span><span>Mid</span><span>Now</span></div>
+            </div>
+          </article>
+
+          <article class="glass-card panel-card">
+            <div class="panel-card__head">
+              <h3 class="card-title">Typing Weakness Analysis</h3>
+            </div>
+            <dl class="weakness-grid">
+              <div><dt>Most problematic key</dt><dd id="weak-key">—</dd></div>
+              <div><dt>Total mistakes</dt><dd id="weak-total-display">0</dd></div>
+              <div><dt>Accuracy trend</dt><dd id="weak-trend">Stable</dd></div>
+              <div><dt>Live accuracy</dt><dd id="weak-accuracy">100%</dd></div>
+            </dl>
+            <div class="error-heat-preview" id="error-heat-preview" aria-hidden="true"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SESSIONS -->
+    <section id="sessions" class="section sessions-section" aria-labelledby="sessions-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Module 05 · Session Recorder</p>
+          <h2 id="sessions-title" class="section-title">Session History</h2>
+          <p class="section-desc">Completed tests are saved to localStorage with performance badges.</p>
+        </div>
+
+        <div class="session-toolbar glass-card">
+          <div class="toolbar-group">
+            <label class="control-label" for="session-filter">Filter</label>
+            <div class="select-wrap">
+              <select id="session-filter" class="select">
+                <option value="today">Today</option>
+                <option value="week" selected>This Week</option>
+                <option value="month">This Month</option>
+                <option value="all">All Time</option>
+              </select>
+            </div>
+          </div>
+          <div class="toolbar-group">
+            <label class="control-label" for="session-sort">Sort</label>
+            <div class="select-wrap">
+              <select id="session-sort" class="select">
+                <option value="latest" selected>Latest Session</option>
+                <option value="wpm">Highest WPM</option>
+                <option value="accuracy">Highest Accuracy</option>
+                <option value="duration">Longest Session</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="sessions-grid" id="sessions-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RESULT MODAL -->
+  <div id="result-modal" class="modal result-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="result-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel glass-card">
+      <div class="modal__head">
+        <div>
+          <p class="eyebrow">Session Complete</p>
+          <h2 id="result-title" class="card-title">Your Results</h2>
+        </div>
+        <button type="button" class="btn btn--ghost btn--sm" data-close-modal>Close</button>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-stat"><span>Final WPM</span><strong class="metric-number" id="result-wpm">0</strong></div>
+        <div class="result-stat"><span>Peak WPM</span><strong class="metric-number" id="result-peak">0</strong></div>
+        <div class="result-stat"><span>Accuracy</span><strong class="metric-number" id="result-accuracy">0%</strong></div>
+        <div class="result-stat"><span>Duration</span><strong class="metric-number" id="result-duration">0s</strong></div>
+        <div class="result-stat"><span>Keystrokes</span><strong class="metric-number" id="result-keys">0</strong></div>
+        <div class="result-stat"><span>Mistakes</span><strong class="metric-number" id="result-mistakes">0</strong></div>
+      </div>
+
+      <div class="result-meta">
+        <div>
+          <p class="control-label">Performance Badge</p>
+          <span class="perf-badge perf-badge--solid" id="result-badge">Beginner</span>
+        </div>
+        <div>
+          <p class="control-label">Accuracy Rating</p>
+          <p class="rating rating--excellent" id="result-rating">Perfect</p>
+        </div>
+      </div>
+
+      <div class="engine__actions result-actions">
+        <button type="button" class="btn btn--primary btn--lg" id="btn-retry">Retry Test</button>
+        <button type="button" class="btn btn--ghost btn--lg" id="btn-new-test">Start New Test</button>
+        <button type="button" class="btn btn--ghost btn--lg" id="btn-view-sessions">View Session History</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <p class="footer__name">Typing Analytics Pro</p>
+        <p class="footer__copy">MVP with a live typing engine, WPM &amp; accuracy labs, error intelligence, and session persistence.</p>
+        <p class="footer__meta">Version 2.0.0 · Author: Your Name</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Platform</p>
+        <a href="#test">Test Engine</a>
+        <a href="#wpm">WPM</a>
+        <a href="#accuracy">Accuracy</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Insights</p>
+        <a href="#errors">Errors</a>
+        <a href="#sessions">Sessions</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Storage</p>
+        <span class="footer-note">Best WPM, sessions, and preferences persist in localStorage.</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Typing Analytics Pro</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
